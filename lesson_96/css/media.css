@@ -6,7 +6,7 @@
   }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1100px) {
   .hero__action {
     margin-right: 0;
   }
@@ -22,6 +22,20 @@
 
   .hero__play-text {
     max-width: none;
+  }
+
+  /* footer */
+  .footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__col:nth-child(2) {
+    text-align: center;
+  }
+
+  .footer__col:last-child {
+    grid-column: 1/-1;
+    text-align: center;
   }
 }
 
@@ -44,6 +58,34 @@
   .burger-menu {
     display: flex;
     z-index: 11;
+  }
+
+  /* application */
+  .application__inner {
+    justify-content: center;
+  }
+
+  .application__img {
+    display: none;
+  }
+
+  /* footer */
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer__inner {
+    grid-template: none;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer__col:first-child {
+    margin-top: 0;
+  }
+
+  .socials__list {
+    justify-content: center;
   }
 }
 
@@ -81,6 +123,12 @@
 
   .hero__btn {
     max-width: none;
+  }
+
+  /* application */
+  .application__inner::before,
+  .application__inner::after {
+    display: none;
   }
 }
 
