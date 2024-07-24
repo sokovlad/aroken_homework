@@ -20,6 +20,8 @@
   overflow: hidden;
 }
 
+address{font-style: normal;}
+
 .wrapper {
   min-height: 100%;
   width: 100%;
