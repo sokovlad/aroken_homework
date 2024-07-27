@@ -650,6 +650,7 @@
   padding: 39px 30px;
   width: 100%;
   background: transparent;
+  color: var(--accent-text);
   transition: var(--transition);
 }
 
