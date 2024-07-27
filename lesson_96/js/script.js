@@ -4,6 +4,9 @@
   const body = document.querySelector(".body");
   const gift = document.querySelector(".about__btn-play");
   const modal = document.querySelector(".modal");
+  const tabControls = document.querySelector(".tab__controls");
+  const tabContent = document.querySelectorAll(".tab__content");
+  // Бургер
   burger.addEventListener("click", (e) => {
     body.classList.toggle("body--opened-menu");
   });
@@ -16,6 +19,7 @@
       body.classList.remove("body--opened-menu");
     }
   });
+  // Модалка
   gift.addEventListener("click", (e) => {
     e.preventDefault();
     body.classList.add("body--opened-modal");
@@ -26,5 +30,57 @@
     if (target == modal || target.closest(".modal__cancel")) {
       body.classList.remove("body--opened-modal");
     }
+  });
+  // Табы
+  tabControls.addEventListener("click", (e) => {
+    e.preventDefault();
+    const tabControl = e.target.closest(".tab__controls-link");
+
+    if (!tabControl) return;
+    if (tabControl.classList.contains("tab__controls-link--active")) return;
+
+    const tabContentId = tabControl.getAttribute("href");
+    const tabContent = document.querySelector(tabContentId);
+    const activeContent = document.querySelector(".tab__content--show");
+    const activeTab = document.querySelector(".tab__controls-link--active");
+
+    if (activeTab) activeTab.classList.remove("tab__controls-link--active");
+    if (activeContent) activeContent.classList.remove("tab__content--show");
+
+    tabContent.classList.add("tab__content--show");
+    tabControl.classList.add("tab__controls-link--active");
+  });
+
+  // Аккордеон
+
+  const accordionLists = document.querySelectorAll(".accordion-list");
+
+  accordionLists.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const accordionList = e.currentTarget;
+      const accordionOpenedItem = accordionList.querySelector(
+        ".accordion-list__item--opened"
+      );
+      const accordionOpenedContent = accordionList.querySelector(
+        ".accordion-list__item--opened .accordion-list__content"
+      );
+      const accordionControl = e.target.closest(".accordion-list__control");
+      if (!accordionControl) return;
+      const accordionItem = accordionControl.parentElement;
+      const accordionContent = accordionControl.nextElementSibling;
+
+      if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+        accordionOpenedItem.classList.remove("accordion-list__item--opened");
+        accordionOpenedContent.style.maxHeight = null;
+      }
+
+      accordionItem.classList.toggle("accordion-list__item--opened");
+
+      if (accordionItem.classList.contains("accordion-list__item--opened")) {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+      } else {
+        accordionContent.style.maxHeight = null;
+      }
+    });
   });
 })();
