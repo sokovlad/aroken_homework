@@ -50,11 +50,8 @@
     tabContent.classList.add("tab__content--show");
     tabControl.classList.add("tab__controls-link--active");
   });
-
   // Аккордеон
-
   const accordionLists = document.querySelectorAll(".accordion-list");
-
   accordionLists.forEach((el) => {
     el.addEventListener("click", (e) => {
       const accordionList = e.currentTarget;
@@ -84,3 +81,61 @@
     });
   });
 })();
+// Слайдер-галерея
+const swiper = new Swiper(".gallery__slider", {
+  spaceBetween: 15,
+  slidesPerView: 1,
+
+  pagination: {
+    el: ".gallery__pagination",
+    type: "fraction",
+  },
+
+  navigation: {
+    nextEl: ".gallery__next",
+    prevEl: ".gallery__prev",
+  },
+
+  breakpoints: {
+    1101: {
+      slidesPerView: 4,
+      spaceBetween: 32,
+    },
+    801: {
+      slidesPerView: 3,
+    },
+    601: {
+      slidesPerView: 2,
+    },
+    501: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+  },
+});
+// Слайдер-отзывы
+const swiper2 = new Swiper(".feedback__slider", {
+  spaceBetween: 0,
+  slidesPerView: 1,
+  centeredSlides: true,
+
+  navigation: {
+    nextEl: ".feedback__next",
+    prevEl: ".feedback__prev",
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    draggable: true,
+  },
+  breakpoints: {
+    1101: {
+      slidesPerView: 1.8,
+    },
+    901: {
+      slidesPerView: 1.3,
+    },
+    501: {
+      slidesPerView: 1.2,
+    },
+  },
+});
