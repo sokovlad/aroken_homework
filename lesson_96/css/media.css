@@ -4,6 +4,13 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  /* program */
+  .program__top {
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -73,9 +80,35 @@
     z-index: 11;
   }
 
+  /* about */
+  .about-offset {
+    padding: 50px 0;
+  }
+
+  /* program */
+  .program-offset {
+    padding-bottom: 70px;
+  }
+  .program__bottom {
+    justify-content: center;
+  }
+  .program__img {
+    display: none;
+  }
+
+  .accordion-list__control,
+  .accordion__content {
+    padding: 20px 30px;
+  }
+
+  .accordion-list__control-title {
+    font-size: 30px;
+  }
+
   /* application */
   .application__inner {
     justify-content: center;
+    padding: 50px 0;
   }
 
   .application__img {
@@ -103,6 +136,11 @@
 }
 
 @media (max-width: 800px) {
+  .section__title {
+    text-align: center;
+  }
+
+  /* hero */
   .hero {
     padding-bottom: 50px;
   }
@@ -139,10 +177,6 @@
   }
 
   /* about */
-  .about-offset {
-    padding: 50px 0;
-  }
-
   .about__inner {
     grid-template: none;
   }
@@ -160,11 +194,16 @@
     grid-template: none;
   }
 
-  /* application */
-  .application__inner {
-    padding: 50px 0;
+  /* program */
+  .program__top {
+    align-items: center;
   }
 
+  .program__descr {
+    text-align: center;
+  }
+
+  /* application */
   .application__inner::before,
   .application__inner::after {
     display: none;
@@ -208,5 +247,52 @@
     max-width: none;
     padding: 10px 15px;
     border-radius: 0;
+  }
+
+  /* program */
+  .program__top {
+    margin-bottom: 40px;
+  }
+
+  .program__action {
+    grid-template: auto / auto;
+  }
+
+  .program__discount {
+    grid-row: auto;
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+
+  .program__price {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .tab__controls {
+    gap: 40px 15px;
+  }
+
+  .accordion-list__control,
+  .accordion__content {
+    padding: 17px 30px;
+  }
+
+  .accordion-list__control-title {
+    font-size: 30px;
+  }
+
+  .accordion-list__control-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .accordion__content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .accordion__content-text {
+    max-width: none;
   }
 }
