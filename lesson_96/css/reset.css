@@ -77,3 +77,6 @@ a {
 address {
   font-style: normal;
 }
+label {
+  user-select: none;
+}

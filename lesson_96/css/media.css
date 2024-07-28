@@ -45,6 +45,10 @@
   }
 
   /* application */
+  .application__inner {
+    gap: 30px;
+  }
+
   .application__img {
     align-self: center;
   }
@@ -150,7 +154,6 @@
 
   .application__inner {
     justify-content: center;
-    padding: 50px 0;
   }
 
   .application__img {
@@ -266,11 +269,15 @@
   .application__inner::after {
     display: none;
   }
+
+  .application__descr {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
   .section__title {
-    font-size: 60px;
+    font-size: 42px;
   }
 
   .modal__window {
@@ -333,7 +340,7 @@
 
   .accordion-list__control,
   .accordion__content {
-    padding: 17px 30px;
+    padding: 10px 15px;
   }
 
   .accordion-list__control-title {
@@ -348,6 +355,15 @@
   .accordion__content {
     flex-direction: column;
     gap: 20px;
+    padding-top: 0;
+  }
+
+  .accordion__content-title {
+    margin-bottom: 10px;
+  }
+
+  .accordion__content-item {
+    margin-bottom: 10px;
   }
 
   .accordion__content-text {

@@ -10,6 +10,11 @@
   --border-radius-20: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5vw;
+}
+
 .body {
   font-family: "Montserrat", "Arial", sans-serif;
   line-height: 1.5;
@@ -62,6 +67,97 @@
 
 .btn:hover {
   background-color: var(--hover-color);
+}
+
+/* form */
+.form__label {
+  position: relative;
+  display: block;
+  line-height: 1.2;
+}
+
+.form__input {
+  padding: 20px 28px;
+  width: 100%;
+  border: 1px solid #ac907a;
+  border-radius: 100px;
+  background: transparent;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.form__input + span {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  color: #ac907a;
+  font-size: 11px;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form__input::placeholder {
+  transition: var(--transition);
+  color: #ac907a;
+}
+
+.form__input:hover {
+  border-color: var(--accent-color);
+}
+
+.form__input:hover::placeholder {
+  color: var(--accent-color);
+}
+
+.form__input:focus {
+  border-color: var(--accent-color);
+  padding: 26px 28px 12px;
+}
+
+.form__input:focus::placeholder {
+  visibility: hidden;
+}
+
+.form__input:focus.form__input + span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__check {
+  position: relative;
+  appearance: none;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #ac907a;
+  border-radius: 4px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.form__check::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/icons/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.form__check:checked {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.form__check:checked::before {
+  opacity: 1;
 }
 
 /* modal */
@@ -138,6 +234,7 @@
 .modal__form-label {
   position: relative;
   display: block;
+  margin-bottom: 10px;
 }
 
 .modal__input + span {
@@ -149,10 +246,6 @@
   text-align: left;
   opacity: 0;
   visibility: hidden;
-}
-
-.modal__input {
-  width: 100%;
 }
 
 .modal__btn {

@@ -277,6 +277,7 @@
   font-size: 42px;
   line-height: 0.9;
   text-align: left;
+  color: var(--accent-text);
 }
 
 .accordion-list__control-icon {
@@ -671,6 +672,7 @@
 
 .application__img img {
   width: 100%;
+  filter: drop-shadow(0px 4px 30px rgba(198, 176, 161, 0.3));
 }
 
 .application__content {
@@ -694,13 +696,15 @@
   flex-direction: column;
 }
 
-.form__label {
-  position: relative;
-  display: block;
-  line-height: 1.2;
+.application__form-inputs {
+  margin-bottom: 20px;
 }
 
-.form__input {
+.application__label {
+  margin-bottom: 11px;
+}
+
+.application__input-tel {
   padding: 20px 28px;
   width: 100%;
   border: 1px solid #ac907a;
@@ -710,103 +714,46 @@
   transition: var(--transition);
 }
 
-.form__input + span {
-  position: absolute;
-  top: 12px;
-  left: 28px;
-  color: #ac907a;
-  font-size: 11px;
-  text-align: left;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.form__input::placeholder {
+.application__input-tel::placeholder {
   transition: var(--transition);
   color: #ac907a;
 }
 
-.form__input:hover {
+.application__input-tel:hover {
   border-color: var(--accent-color);
 }
 
-.form__input:hover::placeholder {
+.application__input-tel:hover::placeholder {
   color: var(--accent-color);
 }
 
-.form__input:focus {
+.application__input-tel:focus {
   border-color: var(--accent-color);
-  padding: 26px 28px 12px;
 }
 
-.form__input:focus::placeholder {
+.application__input-tel:focus::placeholder {
   visibility: hidden;
 }
 
-.form__input:focus.form__input + span {
-  opacity: 1;
-  visibility: visible;
+.application__label-check {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-.application__form .form__label:nth-child(1) {
-  margin-bottom: 11px;
-}
-.application__form .form__label:nth-child(2) {
-  margin-bottom: 20px;
-}
-.application__form .form__label {
-  margin-bottom: 20px;
-}
-
-.custom-check {
-  position: relative;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1.5px solid #ac907a;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.custom-check::before {
-  content: "";
-  position: absolute;
-  display: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  background-image: url("../img/icons/check.svg");
-  background-color: var(--accent-color);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-label {
-  user-select: none;
-}
-
-label:hover .custom-check {
-  border-color: var(--accent-color);
-}
-
-label .form__check {
-  display: none;
-}
-
-label input:checked ~ .custom-check::before {
-  display: block;
-}
-
-label input:checked ~ .custom-check {
+.application__label-check:hover .form__check {
   border-color: var(--accent-color);
 }
 
 .application__link-policy {
   text-decoration: underline;
+  transition: var(--transition);
+}
+
+.application__link-policy:hover {
+  color: var(--accent-color);
 }
 
 .application__btn {
