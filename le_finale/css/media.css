@@ -1,0 +1,128 @@
+@media (max-width: 1100px) {
+  .hero__supported {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* header */
+  .header__inner {
+    justify-content: space-between;
+  }
+
+  .header__nav {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
+    gap: 30px;
+    padding: 15vh 15px 0;
+    background-color: var(--accent-bg);
+    font-size: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: var(--transition);
+    z-index: 10;
+  }
+
+  .header__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 0;
+  }
+
+  .header__link {
+    font-size: 32px;
+  }
+
+  .header__link--more {
+    display: none;
+  }
+
+  .accordion__content-list {
+    position: static;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-height: 100%;
+    padding: 0;
+    overflow: auto;
+    background-color: var(--accent-bg);
+    box-shadow: none;
+    border-radius: none;
+    transition: var(--transition);
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .accordion--opened .accordion__content-list {
+    padding-top: 0;
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .accordion__content-item {
+    margin-bottom: 0;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .header__button-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .header__btn {
+    font-size: 24px;
+    text-align: center;
+    padding: 22px;
+  }
+
+  /* hero */
+  .hero__content::after,
+  .hero__content::before {
+    content: none;
+  }
+
+  .hero__slider {
+    overflow: hidden;
+  }
+
+  .hero__supported-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-bottom: 60px;
+  }
+
+  .hero__title {
+    margin-bottom: 20px;
+    font-size: 15vw;
+  }
+
+  .hero__descr {
+    margin-bottom: 30px;
+  }
+
+  .hero__slider {
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+
+  .hero__btn {
+    margin-bottom: 60px;
+  }
+}
