@@ -1,12 +1,18 @@
+// Галлерея-слайдер
 const swiper = new Swiper(".hero__slider", {
   spaceBetween: 15,
   slidesPerView: 1,
-  centeredSlides: true,
-  autoplay: true,
-  effect: "slide",
+  slidesPervNext: 2,
+  freeMode: true,
+  loopAdditionalSlides: 2,
+  loopAddBlankSlides: true,
+  autoplay: {
+    enabled: true,
+    delay: 0,
+    pauseOnMouseEnter: true,
+  },
   loop: true,
-
-  speed: 1000,
+  speed: 2500,
 
   breakpoints: {
     901: {
@@ -21,7 +27,6 @@ const swiper = new Swiper(".hero__slider", {
     },
   },
 });
-
 // Аккордеон
 const accordion = document.querySelector(".accordion");
 accordion.addEventListener("click", (e) => {
@@ -54,4 +59,26 @@ links.addEventListener("click", (e) => {
   ) {
     body.classList.remove("body--opened-menu");
   }
+});
+// Отзывы-слайдер
+const swiper2 = new Swiper(".testimonials__slider", {
+  spaceBetween: 20,
+  slidesPerView: 1,
+
+  navigation: {
+    nextEl: ".testimonials__btn--next",
+    prevEl: ".testimonials__btn--prev ",
+  },
+
+  breakpoints: {
+    1101: {
+      slidesPerView: 2,
+    },
+    901: {
+      slidesPerView: 1.5,
+    },
+    601: {
+      slidesPerView: 1.1,
+    },
+  },
 });

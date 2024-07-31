@@ -18,7 +18,7 @@
     justify-content: normal;
     align-items: center;
     gap: 30px;
-    padding: 15vh 15px 0;
+    padding: 15vh 15px 10vh;
     background-color: var(--accent-bg);
     font-size: 24px;
     opacity: 0;
@@ -26,12 +26,13 @@
     transform: translateY(-50%);
     transition: var(--transition);
     z-index: 10;
+    overflow-y: scroll;
   }
 
   .header__list {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     padding-top: 0;
   }
 
@@ -45,20 +46,18 @@
 
   .accordion__content-list {
     position: static;
-    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     width: 100%;
     max-height: 100%;
     padding: 0;
     overflow: auto;
     background-color: var(--accent-bg);
     box-shadow: none;
-    border-radius: none;
+    border-radius: 0;
     transition: var(--transition);
-    z-index: 1;
     opacity: 1;
   }
 
@@ -103,7 +102,50 @@
   }
 }
 
+@media (max-width: 800px) {
+  /* about */
+  .about__content {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .about__quote::after,
+  .about__quote::before {
+    content: none;
+  }
+
+  .about__quote-author {
+    margin-left: 0;
+  }
+
+  .about__content-img {
+    max-width: 220px;
+  }
+
+  /* testimonials */
+  .testimonials__title::after {
+    content: none;
+  }
+}
+
 @media (max-width: 600px) {
+  /* global */
+  .section__title {
+    font-size: 40px;
+  }
+
+  .section-offset {
+    padding: 60px 0;
+  }
+
+  .section-decor::before,
+  .section-decor--black::before {
+    top: -50px;
+    height: 110px;
+  }
+
+  /* hero */
   .hero {
     padding-bottom: 60px;
   }
@@ -124,5 +166,40 @@
 
   .hero__btn {
     margin-bottom: 60px;
+  }
+
+  /* about */
+  .about__title {
+    margin-bottom: 50px;
+  }
+
+  .about__content-img {
+    margin-bottom: 0;
+    max-width: 180px;
+  }
+
+  .about__quote {
+    padding: 20px;
+  }
+
+  .about__quote-icon {
+    margin-bottom: 30px;
+  }
+
+  .about__quote-text {
+    font-size: 30px;
+  }
+
+  /* testimonials */
+  .testimonials__descr {
+    margin-bottom: 60px;
+  }
+
+  .testimonials__slider {
+    margin-bottom: 30px;
+  }
+
+  .testimonials__author {
+    justify-content: center;
   }
 }
