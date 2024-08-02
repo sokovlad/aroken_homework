@@ -2,14 +2,10 @@
 const swiper = new Swiper(".hero__slider", {
   spaceBetween: 15,
   slidesPerView: 1,
-  slidesPervNext: 2,
-  freeMode: true,
   loopAdditionalSlides: 2,
-  loopAddBlankSlides: true,
   autoplay: {
     enabled: true,
     delay: 0,
-    pauseOnMouseEnter: true,
   },
   loop: true,
   speed: 2500,
@@ -30,7 +26,6 @@ const swiper = new Swiper(".hero__slider", {
 // Аккордеон
 const accordion = document.querySelector(".accordion");
 accordion.addEventListener("click", (e) => {
-  e.preventDefault();
   const accordionItem = e.currentTarget;
   const accordionContent = document.querySelector(".accordion__content-list");
   accordionItem.classList.toggle("accordion--opened");
@@ -81,4 +76,34 @@ const swiper2 = new Swiper(".testimonials__slider", {
       slidesPerView: 1.1,
     },
   },
+});
+// Показать больше - эпизоды
+const episodesBtn = document.querySelector(".episodes__btn");
+const episodesMore = document.querySelector(".episodes__more");
+
+episodesBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  episodesMore.classList.toggle("episodes__more--show");
+  if (!episodesMore.classList.contains("episodes__more--show")) {
+    episodesMore.style.maxHeight = null;
+    episodesBtn.textContent = "BROWSE ALL EPISODES";
+  } else {
+    episodesMore.style.maxHeight = episodesMore.scrollHeight + "px";
+    episodesBtn.textContent = "Show less EPISODES";
+  }
+});
+// Показать больше - статьи
+const newsBtn = document.querySelector(".news__btn");
+const newsMore = document.querySelector(".news__list-more");
+
+newsBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  newsMore.classList.toggle("news__list-more--show");
+  if (!newsMore.classList.contains("news__list-more--show")) {
+    newsMore.style.maxHeight = null;
+    newsBtn.textContent = "BROWSE ALL";
+  } else {
+    newsMore.style.maxHeight = newsMore.scrollHeight + "px";
+    newsBtn.innerText = "SHOW LESS";
+  }
 });

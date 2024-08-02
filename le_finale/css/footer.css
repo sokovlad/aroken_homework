@@ -1,0 +1,148 @@
+.footer {
+  padding-top: 140px;
+}
+
+.footer__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr;
+  gap: 30px 20px;
+  padding-bottom: 130px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.footer__logo span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.footer__text {
+  margin-bottom: 40px;
+  max-width: 275px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 25px;
+}
+
+.footer__socials-link svg {
+  fill: var(--title-text);
+  transition: var(--transition);
+}
+
+.footer__socials-link:hover svg {
+  fill: var(--hover-color);
+}
+
+.footer__nav {
+  max-width: 300px;
+}
+
+.footer__nav-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 93px;
+}
+
+.footer__nav-link {
+  color: var(--title-text);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.footer__nav-link:hover {
+  color: var(--hover-color);
+}
+
+.footer__text-stores,
+.footer__text-platforms {
+  font-weight: 500;
+}
+
+.footer__text-platforms {
+  margin-bottom: 29px;
+}
+
+.footer__text-stores {
+  margin-bottom: 17px;
+}
+
+.footer__platforms {
+  display: flex;
+  align-items: center;
+  gap: 20px 38.5px;
+  margin-bottom: 60px;
+}
+
+.footer__platforms-item:nth-child(1) .footer__platforms-img {
+  max-width: 122px;
+}
+
+.footer__platforms-item:nth-child(2) .footer__platforms-img {
+  max-width: 80px;
+  max-height: 22px;
+}
+
+.footer__platforms-item:nth-child(3) .footer__platforms-img {
+  max-width: 94.02px;
+}
+
+.footer__stores {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px 0 80px;
+  border-top: 0.5px solid var(--general-text);
+}
+
+.footer__copyright {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.footer__copyright span {
+  color: var(--hover-color);
+}
+
+.footer__bottom-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__botom-item {
+  display: flex;
+  align-items: center;
+}
+
+.footer__botom-item:not(:last-child):after {
+  content: "";
+  margin: 0 10px;
+  width: 2px;
+  height: 2px;
+  background-color: var(--general-text);
+  border-radius: 50%;
+}
+
+.footer__bottom-link {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.footer__bottom-link:hover {
+  color: var(--hover-color);
+}

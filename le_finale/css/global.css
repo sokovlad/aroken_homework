@@ -6,11 +6,12 @@
   --hover-color: #cd4631;
   --transition: all 0.3s ease-in-out;
   --border-radius-8: 8px;
+  --margin-bottom-100: 100px;
+  --margin-bottom-120: 120px;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5vw;
 }
 
 .body {
@@ -45,7 +46,6 @@ html {
 }
 
 /* section */
-
 .section-offset {
   padding: 140px 0;
 }
